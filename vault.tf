@@ -19,9 +19,9 @@ server:
     VAULT_SKIP_VERIFY: true
     VAULT_CACERT: /vault/userconfig/vault-internal-tls/vault-local.ca
     VAULT_API_ADDR: https://127.0.0.1
-  serviceaccount:
-    annotations:
-      iam.gke.io/gcp-service-account: cloudforte-containers@appspot.gserviceaccount.com
+ # serviceaccount:
+ #   annotations:
+ #     iam.gke.io/gcp-service-account: cloudforte-containers@appspot.gserviceaccount.com
  # extraVolumes:
  #   - type: secret
  #     name: ${var.vault_tls_k8s_secret}
