@@ -66,3 +66,6 @@ variable "vault_tls_k8s_secret" {
 variable "vault_tls_secret_resource" {
   description = "Link to k8s secret resource for the sake of creating a cross-module dependency"
 }
+
+variable "account_file_path" {
+}

@@ -15,13 +15,17 @@ server:
     repository: "vault"
     tag: "${var.vault_version}"
   extraEnvironmentVars:
-    VAULT_ADDR: https://127.0.0.1:8200
-    VAULT_SKIP_VERIFY: true
-    VAULT_CACERT: /vault/userconfig/vault-internal-tls/vault-local.ca
-    VAULT_API_ADDR: https://127.0.0.1
- # serviceaccount:
- #   annotations:
- #     iam.gke.io/gcp-service-account: cloudforte-containers@appspot.gserviceaccount.com
+    GOOGLE_REGION: global
+    GOOGLE_PROJECT: vault
+    GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/kms-creds/credentials.json
+#    VAULT_CACERT: /vault/userconfig/vault-internal-tls/vault-local.ca
+#    VAULT_ADDR: https://127.0.0.1:8200
+#    VAULT_SKIP_VERIFY: true
+#    VAULT_CACERT: /vault/userconfig/vault-internal-tls/vault-local.ca
+#    VAULT_API_ADDR: https://127.0.0.1
+  serviceaccount:
+    annotations:
+      iam.gke.io/gcp-service-account: 394915906013-compute@developer.gserviceaccount.com
  # extraVolumes:
  #   - type: secret
  #     name: ${var.vault_tls_k8s_secret}
